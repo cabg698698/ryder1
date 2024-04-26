@@ -1,10 +1,10 @@
 import os
 import psycopg2
 
-
+DATABASE_URL = "postgres://ryder_user:v0kNI4Pqp6h5Om1UuzuQmwaAHOcqeTsW@dpg-colmh3a1hbls7391npug-a.singapore-postgres.render.com/ryder"
 
 def search_record(record_list):
-    DATABASE_URL = os.environ["DATABASE_URL"]
+
 
     conn = psycopg2.connect(DATABASE_URL, sslmode="require")
     cursor = conn.cursor()
@@ -17,7 +17,7 @@ def search_record(record_list):
     return result
 
 def update_record(record_list):
-    DATABASE_URL = os.environ["DATABASE_URL"]
+
 
     conn = psycopg2.connect(DATABASE_URL, sslmode="require")
     cursor = conn.cursor()
@@ -60,7 +60,7 @@ def update_record(record_list):
 
 
 def insert_record(record_list):
-    DATABASE_URL = os.environ["DATABASE_URL"]
+
 
     conn = psycopg2.connect(DATABASE_URL, sslmode="require")
     cursor = conn.cursor()
@@ -79,7 +79,7 @@ def insert_record(record_list):
     return result
 
 def delete_record(record_list):
-    DATABASE_URL = os.environ["DATABASE_URL"]
+
 
     conn = psycopg2.connect(DATABASE_URL, sslmode="require")
     cursor = conn.cursor()
