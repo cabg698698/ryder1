@@ -100,7 +100,7 @@ def address_search_FlexMessage(result):
                         "type": "box",
                         "layout": "vertical",
                         "spacing": "md",
-                        "contents": body_contents},
+                        "contents": [title_in_FlexMessage("搜尋到多筆資料如下:")]},
                     "footer": {
                         "type": "box",
                         "layout": "vertical",
