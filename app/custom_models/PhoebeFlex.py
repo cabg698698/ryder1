@@ -67,8 +67,12 @@ def address_search_FlexMessage(result):
     print(len(result))
     #?單筆查詢狀況
     if len(result) == 1:
-        result = result[0]
-        print(result)
+        y = []
+        for x in result[0]:
+            if x == "":
+                x = "*"
+            y.append(x)
+        result = y
         if (result[3] != ',') and (result[3] != '""'):
             hero_image_url = "https://www.google.com.tw/maps/place/" + result[3]
         else:
@@ -80,12 +84,12 @@ def address_search_FlexMessage(result):
             lat = str(hero_image_url["results"][0]["geometry"]["location"]["lat"])
             lng = str(hero_image_url["results"][0]["geometry"]["location"]["lng"])
             hero_image_url = "https://www.google.com.tw/maps/place/" + lat + "," + lng
-
+        
 
         box_contents = {"type": "box",
                         "layout": "vertical",
                         "spacing": "md",
-                        "contents": [baseline_content("地址:",result[2]),baseline_content("座標:",result[3]),baseline_content("走法:",result[4]),baseline_content("電源:",result[5])]}
+                        "contents": [baseline_content("地址:",result[2]),baseline_content("座標:",result[3]),baseline_content("走法:",result[4]),baseline_content("電源:",result[5]),baseline_content("備註:",result[6])]}
 
 
         body_contents = [title_in_FlexMessage(result[1]),
