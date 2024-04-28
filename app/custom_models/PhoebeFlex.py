@@ -88,8 +88,7 @@ def address_search_FlexMessage(result):
                         "contents": [baseline_content("地址:",result[2]),baseline_content("座標:",result[3]),baseline_content("走法:",result[4]),baseline_content("電源:",result[5]),baseline_content("備註:",result[6])]}
 
 
-        body_contents = [title_in_FlexMessage(result[1]),
-                        box_contents]
+        body_contents = [title_in_FlexMessage(result[1])]
 
         footer_contents = []
         #footer_contents = [button_in_FlexMessage("修改", f"修改地點資訊:{result[1]}", "修改" + result[1] + "資訊")]
@@ -100,7 +99,7 @@ def address_search_FlexMessage(result):
                         "type": "box",
                         "layout": "vertical",
                         "spacing": "md",
-                        "contents": [title_in_FlexMessage("搜尋到多筆資料如下:")]},
+                        "contents": body_contents},
                     "footer": {
                         "type": "box",
                         "layout": "vertical",
