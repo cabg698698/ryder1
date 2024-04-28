@@ -68,6 +68,7 @@ def address_search_FlexMessage(result):
     #?單筆查詢狀況
     if len(result) == 1:
         result = result[0]
+        print(result)
         if (result[3] != ',') and (result[3] != '""'):
             hero_image_url = "https://www.google.com.tw/maps/place/" + result[3]
         else:
