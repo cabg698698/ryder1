@@ -10,6 +10,7 @@ def search_record(event):
             record_list = utils.search_record(event.message.text)
             result = CallDatabase.search_record(record_list)
             output = PhoebeFlex.address_search_FlexMessage(result)
+            print(output)
             line_bot_api.reply_message(
                 event.reply_token,
                 FlexSendMessage(alt_text="單一地點查詢", contents=output)
