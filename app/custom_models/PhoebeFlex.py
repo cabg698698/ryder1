@@ -22,13 +22,13 @@ def text_in_FlexMessage(text, flex, size, color, weight, wrap):
             "wrap": wrap}
 
 def title_in_FlexMessage(text):
-    return text_in_FlexMessage(text, 1, "lg", "#2F4F4F", "bold", True)
+    return text_in_FlexMessage(text, 1, "lg", "#2F4F4F", "bold", "true")
 #TODO:baseline
 def baselinetitle_in_FlexMessage(text):
-    return text_in_FlexMessage(text, 1, "md", "#D2691E", "bold", True)
+    return text_in_FlexMessage(text, 1, "md", "#D2691E", "bold", "true")
 
 def baselinecontext_in_FlexMessage(text):
-    return text_in_FlexMessage(text, 6, "md", "#666666", "regular", True)
+    return text_in_FlexMessage(text, 6, "md", "#666666", "regular", "true")
 
 def baseline_content(title,context):
     return {"type": "box",
