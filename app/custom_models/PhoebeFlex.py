@@ -73,11 +73,11 @@ def address_search_FlexMessage(result):
                 x = "*"
             y.append(x)
         result = y
-        if (result[3] != ',') and (result[3] != '""'):
-            hero_image_url = "https://www.google.com.tw/maps/place/" + result[3]
+        if (result[2] != ',') and (result[2] != '""'):
+            hero_image_url = "https://www.google.com.tw/maps/place/" + result[2]
         else:
             api = "AIzaSyAzbIH-i1KVjLvspIB0cJT7Ni5GcUfY6Do"
-            x = result[2].split(",")[0]
+            x = result[1].split(",")[0]
             hero_image_url = f"https://maps.googleapis.com/maps/api/geocode/json?key={api}&address={x}&sensor=false"
             hero_image_url = requests.get(hero_image_url)
             hero_image_url = hero_image_url.json()
@@ -89,14 +89,14 @@ def address_search_FlexMessage(result):
         box_contents = {"type": "box",
                         "layout": "vertical",
                         "spacing": "md",
-                        "contents": [baseline_content("地址:",result[2]),baseline_content("座標:",result[3]),baseline_content("走法:",result[4]),baseline_content("電源:",result[5]),baseline_content("備註:",result[6])]}
+                        "contents": [baseline_content("地址:",result[1]),baseline_content("座標:",result[2]),baseline_content("走法:",result[3]),baseline_content("電源:",result[4]),baseline_content("備註:",result[5])]}
 
 
-        body_contents = [title_in_FlexMessage(result[1]),
+        body_contents = [title_in_FlexMessage(result[0]),
                         box_contents]
 
         footer_contents = []
-        #footer_contents = [button_in_FlexMessage("修改", f"修改地點資訊:{result[1]}", "修改" + result[1] + "資訊")]
+        #footer_contents = [button_in_FlexMessage("修改", f"修改地點資訊:{result[0]}", "修改" + result[0] + "資訊")]
 
         FlexMessage = {"type": "bubble",
                     "hero": image_in_FlexMessage(hero_image_url),
