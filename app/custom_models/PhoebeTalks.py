@@ -28,7 +28,7 @@ def search_record(event):
         return False
 
 def update_record(event):
-    if ("修改" in event.message.text) or ("新增" in event.message.text):
+    if ("修改:" in event.message.text) or ("新增:" in event.message.text):
         print(event.message.text)
         x = event.message.text.count(":") + event.message.text.count("：")
         try:
