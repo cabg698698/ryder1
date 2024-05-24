@@ -8,7 +8,6 @@ from linebot.models import MessageEvent,TextMessage,PostbackEvent
 @handler.add(MessageEvent, message=TextMessage)
 def reply_text(event):
     event.message.text = event.message.text.replace("：",":")
-    print(event.message.text)
     if event.source.user_id != "Udeadbeefdeadbeefdeadbeefdeadbeef":
         reply = False
         if not reply:
