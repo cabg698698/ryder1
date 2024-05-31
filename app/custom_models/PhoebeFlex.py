@@ -73,7 +73,7 @@ def address_search_FlexMessage(result):
                 x = "*"
             y.append(x)
         result = y
-        if (result[2] != ',') and (result[2] != '""'):
+        if result[2] != '@1218@':
             hero_image_url = "https://www.google.com.tw/maps/place/" + result[2]
         else:
             api = "AIzaSyAzbIH-i1KVjLvspIB0cJT7Ni5GcUfY6Do"
