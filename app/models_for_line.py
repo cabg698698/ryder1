@@ -12,7 +12,7 @@ def reply_text(event):
         reply = False
         if not reply:
             print(event.message.text)
-            if "查 " in event.message.text:
+            if "查:" in event.message.text:
                 reply = PhoebeTalks.search_record(event)#查詢資料
             if ("修改:" in event.message.text) or ("新增:" in event.message.text):
                 reply = PhoebeTalks.update_record(event)#修改或新增資料
