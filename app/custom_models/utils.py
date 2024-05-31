@@ -1,7 +1,7 @@
 import re
 
 def search_record(text):
-    text_list = text.split(" ")
+    text_list = re.split(":|：", text)
     record = text_list[1].upper()
     return record
 
