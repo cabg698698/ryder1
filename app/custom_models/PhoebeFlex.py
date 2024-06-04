@@ -85,11 +85,11 @@ def address_search_FlexMessage(result):
             lng = str(hero_image_url["results"][0]["geometry"]["location"]["lng"])
             hero_image_url = "https://www.google.com.tw/maps/place/" + lat + "," + lng
         
-        
+
         box_contents = {"type": "box",
                         "layout": "vertical",
                         "spacing": "md",
-                        "contents": [baseline_content("地址:",result[1]),baseline_content("走法:",result[3]),baseline_content("電源:",result[4]),baseline_content("備註:",result[5])]}
+                        "contents": [baseline_content("地址:",result[1]),baseline_content("座標:",result[2]),baseline_content("走法:",result[3]),baseline_content("電源:",result[4]),baseline_content("備註:",result[5])]}
 
 
         body_contents = [title_in_FlexMessage(result[0]),
@@ -97,9 +97,9 @@ def address_search_FlexMessage(result):
 
         footer_contents = []
         #footer_contents = [button_in_FlexMessage("修改", f"修改地點資訊:{result[0]}", "修改" + result[0] + "資訊")]
-        print(hero_image_url)
+
         FlexMessage = {"type": "bubble",
-                    "hero": image_in_FlexMessage(hero_image_url),
+                    "hero": 
                     "body": {
                         "type": "box",
                         "layout": "vertical",
