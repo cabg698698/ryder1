@@ -89,7 +89,7 @@ def address_search_FlexMessage(result):
         box_contents = {"type": "box",
                         "layout": "vertical",
                         "spacing": "md",
-                        "contents": [baseline_content("地址:",result[1]),baseline_content("座標:",result[2]),baseline_content("走法:",result[3]),baseline_content("電源:",result[4]),baseline_content("備註:",result[5])]}
+                        "contents": [baseline_content("地址:",result[1]),baseline_content("走法:",result[3]),baseline_content("電源:",result[4]),baseline_content("備註:",result[5])]}
 
 
         body_contents = [title_in_FlexMessage(result[0]),
