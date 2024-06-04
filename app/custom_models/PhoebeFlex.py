@@ -110,6 +110,13 @@ def address_search_FlexMessage(result):
                         "layout": "vertical",
                         "contents": footer_contents}}
     #?多筆查詢狀況
+    elif len(result) == 0:
+        FlexMessage = {"type": "bubble",
+                       "body": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "spacing": "md",
+                            "contents": [title_in_FlexMessage("查無該地點名")]}}
     else:
         footer_contents = []
         for x in result:
