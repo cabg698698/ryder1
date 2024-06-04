@@ -74,7 +74,7 @@ def address_search_FlexMessage(result):
             y.append(x)
         result = y
         if result[2] != '@1218@':
-            hero_image_url = "https://www.google.com.tw/maps/place/" + result[2]
+            hero_image_url = "https://www.google.com.tw/maps/place/"
         else:
             api = "AIzaSyAzbIH-i1KVjLvspIB0cJT7Ni5GcUfY6Do"
             x = result[1].split(",")[0]
@@ -85,7 +85,7 @@ def address_search_FlexMessage(result):
             lng = str(hero_image_url["results"][0]["geometry"]["location"]["lng"])
             hero_image_url = "https://www.google.com.tw/maps/place/" + lat + "," + lng
         
-
+        
         box_contents = {"type": "box",
                         "layout": "vertical",
                         "spacing": "md",
@@ -99,7 +99,7 @@ def address_search_FlexMessage(result):
         #footer_contents = [button_in_FlexMessage("修改", f"修改地點資訊:{result[0]}", "修改" + result[0] + "資訊")]
 
         FlexMessage = {"type": "bubble",
-                    "hero": 
+                    "hero": image_in_FlexMessage(hero_image_url),
                     "body": {
                         "type": "box",
                         "layout": "vertical",
