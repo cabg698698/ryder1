@@ -120,7 +120,7 @@ def address_search_FlexMessage(result):
     else:
         footer_contents = []
         for x in result:
-            footer_contents.append(button_in_FlexMessage_message(x[0],"查 " + x[0]))
+            footer_contents.append(button_in_FlexMessage_message(x[0],"查:" + x[0]))
         FlexMessage = {"type": "bubble",
                        "body": {
                             "type": "box",
