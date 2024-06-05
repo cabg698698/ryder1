@@ -63,7 +63,8 @@ def button_in_FlexMessage_message(label,text):
 
 
 #TODO:主要Flex介面設定
-def search_explain_FlexMessage(result):
+#!指令說明部分
+def search_explain_FlexMessage():
     FlexMessage = { "type": "bubble",
                     "size": "giga",
                     "body": {   "type": "box",
@@ -86,7 +87,7 @@ def search_explain_FlexMessage(result):
 
 
 
-
+#!操作指令部分
 def address_search_FlexMessage(result):
     print(len(result))
     #?單筆查詢狀況

@@ -122,7 +122,7 @@ def modify_address_i(event):
 
 def search_explain(event):
     try:
-        output = PhoebeFlex.search_explain_FlexMessage(result)
+        output = PhoebeFlex.search_explain_FlexMessage()
         print(output)
         line_bot_api.reply_message(
             event.reply_token,
