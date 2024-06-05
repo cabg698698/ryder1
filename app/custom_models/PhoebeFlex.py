@@ -63,6 +63,30 @@ def button_in_FlexMessage_message(label,text):
 
 
 #TODO:主要Flex介面設定
+def search_explain_FlexMessage(result):
+    FlexMessage = { "type": "bubble",
+                    "size": "giga",
+                    "body": {   "type": "box",
+                                "layout": "vertical",
+                                "contents": [
+                                {"type": "text","text": "查詢指令說明:","size": "xl","weight": "bold"},
+                                {"type": "separator","margin": "md"},
+                                {"type": "box","layout": "vertical","contents": [
+                                    {"type": "text","text": "查詢指令:","contents": []},
+                                    {"type": "text","text": "一般範例如下(查:<地點名>)","offsetStart": "xxl","color": "#0000ff"},
+                                    {"type": "text","text": "查:PCDP1440","align": "center"},
+                                    {"type": "text","text": "查:泰隆新境","align": "center"},
+                                    {"type": "text","text": "查局名範例如下(查:PCTR局 or 查:樹林局)","offsetStart": "xxl","color": "#0000ff"},
+                                    {"type": "text","text": "查:PCGY局","align": "center"},
+                                    {"type": "text","text": "查:土城局","align": "center"}]},
+                                {"type": "box","layout": "vertical","contents": [
+                                    {"type": "text","text": "若搜尋出匹配到多筆,會列出來請再點選你要查的即可","size": "sm","color": "#006600"}]}]}}
+    return FlexMessage
+
+
+
+
+
 def address_search_FlexMessage(result):
     print(len(result))
     #?單筆查詢狀況

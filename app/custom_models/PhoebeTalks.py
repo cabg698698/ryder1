@@ -34,9 +34,7 @@ def update_record(event):
             else:
                 CallDatabase.update_record(record_list)
                 result = CallDatabase.search_record(record_list[1])
-                print("xxx")
                 output = PhoebeFlex.address_search_FlexMessage(result)
-                print("yyyy")
                 line_bot_api.reply_message(
                     event.reply_token,
                     FlexSendMessage(alt_text="單一地點查詢", contents=output)
@@ -120,3 +118,20 @@ def modify_address_i(event):
             event.reply_token,
             FlexSendMessage(alt_text="單一地點查詢", contents=output)
         )
+
+
+def search_explain(event):
+    try:
+        output = PhoebeFlex.search_explain_FlexMessage(result)
+        print(output)
+        line_bot_api.reply_message(
+            event.reply_token,
+            FlexSendMessage(alt_text="查詢指令說明", contents=output)
+        )
+        return True
+    except:
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text="失敗了")
+        )
+        return True
