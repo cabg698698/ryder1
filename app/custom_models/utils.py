@@ -30,5 +30,5 @@ def insert_record(text):
 
 def delete_record(text):
     text_list = re.split(":|：", text)
-    record = text_list[1]
+    record = text_list[1].upper()
     return record
