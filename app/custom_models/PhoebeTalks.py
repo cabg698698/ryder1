@@ -78,6 +78,7 @@ def insert_record(event):
     try:
         if re.split(":|：", event.message.text)[-1] == "@1218@":
             record_list = utils.insert_record(event.message.text)
+            print("55555")
             result = CallDatabase.insert_record(record_list)
             line_bot_api.reply_message(
                 event.reply_token,
