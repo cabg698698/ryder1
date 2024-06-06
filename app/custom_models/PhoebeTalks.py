@@ -2,6 +2,7 @@ from app import line_bot_api
 from app.custom_models import utils, CallDatabase, PhoebeFlex
 from linebot.models import TextSendMessage, ImageSendMessage, TemplateSendMessage, FlexSendMessage
 from linebot.models import TemplateAction
+import re
 
 def search_record(event):
     try:
@@ -78,7 +79,7 @@ def insert_record(event):
     try:
         if re.split(":|：", event.message.text)[-1] == "@1218@":
             record_list = utils.insert_record(event.message.text)
-            print("55555")
+            print("5555")
             result = CallDatabase.insert_record(record_list)
             line_bot_api.reply_message(
                 event.reply_token,
