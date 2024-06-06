@@ -24,22 +24,11 @@ def update_record(text):
 
 
 def insert_record(text):
-    text_list = text.split("\n")
-    record_list = []
-    for i in text_list[1:]:
-        items = i.split(" ")
-        box_name = items[0]
-        address = items[1]
-        lng_lat = items[2]
-        entry_method = items[3]
-        source_type = items[4]
-        remark = items[5]
-
-        record = (box_name,address,lng_lat,entry_method,source_type,remark)
-        record_list.append(record)
+    text_list = re.split(":|：", text)
+    record_list = [text_list[1].upper(),text_list[2],text_list[3],text_list[4],text_list[5],text_list[6]]
     return record_list
 
 def delete_record(text):
-    text_list = text.split("\n")
+    text_list = re.split(":|：", text)
     record = text_list[1]
     return record

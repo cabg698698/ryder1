@@ -64,27 +64,68 @@ def button_in_FlexMessage_message(label,text):
 
 #TODO:主要Flex介面設定
 #!指令說明部分
+#查詢指令說明
 def search_explain_FlexMessage():
     FlexMessage = { "type": "bubble",
                     "size": "giga",
                     "body": {   "type": "box",
                                 "layout": "vertical",
                                 "contents": [
-                                {"type": "text","text": "查詢指令說明:","size": "xl","weight": "bold"},
+                                {"type": "text","text": "查詢指令說明:","size": "3xl","weight": "bold"},
                                 {"type": "separator","margin": "md"},
                                 {"type": "box","layout": "vertical","contents": [
-                                    {"type": "text","text": "查詢指令:","contents": []},
-                                    {"type": "text","text": "一般範例如下(查:<地點名>)","offsetStart": "xxl","color": "#0000ff"},
-                                    {"type": "text","text": "查:PCDP1440","align": "center"},
-                                    {"type": "text","text": "查:泰隆新境","align": "center"},
-                                    {"type": "text","text": "查局名範例如下(查:PCTR局 or 查:樹林局)","offsetStart": "xxl","color": "#0000ff"},
-                                    {"type": "text","text": "查:PCGY局","align": "center"},
-                                    {"type": "text","text": "查:土城局","align": "center"}]},
+                                    {"type": "text","text": "查詢指令:","size": "xxl","contents": []},
+                                    {"type": "text","text": "一般範例如下(查:<地點名>)","size": "xl","weight": "bold","offsetStart": "xxl","color": "#0000ff"},
+                                    {"type": "text","text": "查:PCDP1440","size": "xxl","align": "center"},
+                                    {"type": "text","text": "查:泰隆新境","size": "xxl","align": "center"},
+                                    {"type": "text","text": "查局名範例如下(查:PCTR局 or 查:樹林局)","weight": "bold","offsetStart": "xxl","color": "#0000ff"},
+                                    {"type": "text","text": "查:PCGY局","size": "xxl","align": "center"},
+                                    {"type": "text","text": "查:土城局","size": "xxl","align": "center"}]},
                                 {"type": "box","layout": "vertical","contents": [
-                                    {"type": "text","text": "若搜尋出匹配到多筆,會列出來請再點選你要查的即可","size": "sm","color": "#006600"}]}]}}
+                                    {"type": "text","text": "若搜尋出匹配到多筆,會列出來請再點選你要查的即可","size": "sm","weight": "bold","color": "#006600"}]}]}}
     return FlexMessage
 
 
+#修改指令說明
+def update_explain_FlexMessage():
+    FlexMessage = { "type": "bubble",
+                    "size": "giga",
+                    "body": {   "type": "box",
+                                "layout": "vertical",
+                                "contents": [
+                                {"type": "text","text": "修改指令說明:","size": "3xl","weight": "bold"},
+                                {"type": "separator","margin": "md"},
+                                {"type": "box","layout": "vertical","contents": [
+                                    {"type": "text","text": "修改指令:","size": "xxl","color": "#ff0000","contents": []},
+                                    {"type": "text","text": "範例如下","size": "xxl","weight": "bold","offsetStart": "xxl","color": "#0000ff"},
+                                    {"type": "text","text": "(修改:<地點名>:<要修改項目>:<要修改成的內容>)","size": "sm","weight": "bold","align": "center","color": "#0000ff"},
+                                    {"type": "text","text": "修改:御峰:地址:新北市三峽區xx路xx號","size": "lg","align": "center"},
+                                    {"type": "text","text": "修改:PCTR1261:座標:25.0011384,121.425593","size": "md","align": "center"},
+                                    {"type": "text","text": "修改:PCDP1440:走法:在168號車格旁","size": "lg","align": "center"},
+                                    {"type": "text","text": "修改:泰隆新境:電源:AC","size": "xxl","align": "center"},
+                                    {"type": "text","text": "修改:HE局:備註:無人局需借鑰匙","size": "xl","align": "center"}]},
+				{"type": "separator","margin": "md"},
+                                {"type": "box","layout": "vertical","contents": [
+                                    {"type": "text","text": "新增指令:","size": "xxl","color": "#ff0000","contents": []},
+                                    {"type": "text","text": "說明如下","size": "xxl","weight": "bold","offsetStart": "xxl","color": "#0000ff"},
+                                    {"type": "text","text": "新增指令不會覆蓋原內容,會加入在原內容後","size": "md","align": "center"},
+                                    {"type": "text","text": "範例如下","size": "xxl","weight": "bold","offsetStart": "xxl","color": "#0000ff"},
+                                    {"type": "text","text": "假設PCDP1550的備註內容如下","size": "xl","align": "center"},
+                                    {"type": "text","text": "備註:管理中心022262xxxx","size": "xl","align": "center"},
+                                    {"type": "text","text": "格式(新增:<地點名>:<要新增資訊項目>:<要新增的內容>)","size": "xs","weight": "bold","align": "center","color": "#0000ff"},
+                                    {"type": "text","text": "新增:PCDP1550:備註:需警衛室借鑰匙進入","size": "md","align": "center"},
+                                    {"type": "text","text": "新增指令完後PCDP1550的備註會變成如下","size": "md","align": "center"},
+                                    {"type": "text","text": "備註:管理中心022262xxxx需警衛室借鑰匙進入","size": "md","align": "center"},
+                                    {"type": "text","text": "可看到會加在後面不會取代掉原先資訊","size": "md","align": "center"}]},
+				{"type": "separator","margin": "md"},
+                                {"type": "box","layout": "vertical","contents": [
+                                    {"type": "text","text": "說明總結:","size": "xxl","color": "#ff0000","contents": []},
+                                    {"type": "text","text": "修改指令會覆蓋原內容,但新增指令","size": "xl","weight": "bold","color": "#006600"},
+                                    {"type": "text","text": "不會覆蓋原內容,會加入在原內容後","size": "xl","weight": "bold","color": "#006600"},
+                                    {"type": "text","text": "指令的格式如下總結","size": "xl","weight": "bold","color": "#006600"},
+                                    {"type": "text","text": "(修改:<地點名>:<要修改項目>:<要修改成的內容>)","size": "sm","weight": "bold","align": "center","color": "#0000ff"},
+                                    {"type": "text","text": "(新增:<地點名>:<要新增資訊項目>:<要新增的內容>)","size": "sm","weight": "bold","align": "center","color": "#0000ff"}]}]}}
+    return FlexMessage
 
 
 #!操作指令部分

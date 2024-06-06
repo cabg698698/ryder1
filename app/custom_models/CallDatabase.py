@@ -67,15 +67,12 @@ def insert_record(record_list):
     table_columns = "(box_name, address, lng_lat, entry_method, source_type, remark)"
     postgres_insert_query = f"""INSERT INTO box_data {table_columns} VALUES (%s, %s, %s, %s, %s, %s);"""
 
-    cursor.executemany(postgres_insert_query, record_list)
+    cursor.execute(postgres_insert_query, record_list)
     conn.commit()
-
     result = f"{cursor.rowcount}筆資料新增成功"
     print(result)
-
     cursor.close()
     conn.close()
-
     return result
 
 def delete_record(record_list):
@@ -84,9 +81,12 @@ def delete_record(record_list):
     conn = psycopg2.connect(DATABASE_URL, sslmode="require")
     cursor = conn.cursor()
     
-    postgres_insert_query = f"""DELETE FROM box_data WHERE box_name LIKE '%{record_list}%'"""
+    postgres_insert_query = f"""DELETE FROM box_data WHERE box_name='{record_list}'"""
     print(postgres_insert_query)
     cursor.execute(postgres_insert_query)
     conn.commit()
+    result = f"{cursor.rowcount}筆資料刪除成功"
+    print(result)
     cursor.close()
     conn.close()
+    return result

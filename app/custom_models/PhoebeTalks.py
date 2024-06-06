@@ -76,13 +76,18 @@ def update_record(event):
 def insert_record(event):
     print("2:" + event.message.text)
     try:
-        record_list = utils.insert_record(event.message.text)
-        result = CallDatabase.insert_record(record_list)
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=result)
-        )
-
+        if re.split(":|：", event.message.text)[-1] == "@1218@"
+            record_list = utils.insert_record(event.message.text)
+            result = CallDatabase.insert_record(record_list)
+            line_bot_api.reply_message(
+                event.reply_token,
+                TextSendMessage(text=result)
+            )
+        else:
+            line_bot_api.reply_message(
+                event.reply_token,
+                TextSendMessage(text="新增地點密碼錯誤")
+            )
         return True
     except:
         line_bot_api.reply_message(
@@ -94,10 +99,19 @@ def insert_record(event):
 
 def delete_record(event):
     try:
-        record_list = utils.delete_record(event.message.text)
-        print(record_list)
-        result = CallDatabase.delete_record(record_list)
-        print(result)
+        if re.split(":|：", event.message.text)[-1] == "@1218@"
+            record_list = utils.delete_record(event.message.text)
+            print(record_list)
+            result = CallDatabase.delete_record(record_list)
+            line_bot_api.reply_message(
+                event.reply_token,
+                TextSendMessage(text=result)
+            )
+        else:
+            line_bot_api.reply_message(
+                event.reply_token,
+                TextSendMessage(text="刪除地點密碼錯誤")
+            )
         return True
     except:
         line_bot_api.reply_message(
@@ -127,6 +141,23 @@ def search_explain(event):
         line_bot_api.reply_message(
             event.reply_token,
             FlexSendMessage(alt_text="查詢指令說明", contents=output)
+        )
+        return True
+    except:
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text="失敗了")
+        )
+        return True
+
+
+def update_explain(event):
+    try:
+        output = PhoebeFlex.update_explain_FlexMessage()
+        print(output)
+        line_bot_api.reply_message(
+            event.reply_token,
+            FlexSendMessage(alt_text="修改指令說明", contents=output)
         )
         return True
     except:
