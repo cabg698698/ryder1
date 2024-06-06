@@ -66,7 +66,7 @@ def insert_record(record_list):
     cursor = conn.cursor()
     table_columns = "(box_name, address, lng_lat, entry_method, source_type, remark)"
     postgres_insert_query = f"""INSERT INTO box_data {table_columns} VALUES (%s, %s, %s, %s, %s, %s);"""
-
+    print(postgres_insert_query)
     cursor.execute(postgres_insert_query, record_list)
     conn.commit()
     result = f"{cursor.rowcount}筆資料新增成功"
