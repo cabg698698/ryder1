@@ -1,7 +1,7 @@
 import os
 import psycopg2
 
-DATABASE_URL = "postgres://ryder_user:v0kNI4Pqp6h5Om1UuzuQmwaAHOcqeTsW@dpg-colmh3a1hbls7391npug-a.singapore-postgres.render.com/ryder"
+DATABASE_URL = "postgresql://postgres.ywwtoplpwtptbytgrkha:v0kNI4Pqp6h5Om1UuzuQmwaAHOcqeTsW@aws-0-ap-northeast-1.pooler.supabase.com:6543/postgres"
 
 def search_record(record_list):
 
